@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Tanka Poster",
+    "version": "1.0",
+    "description": "/tanka 見つけてすぐに 載せられる 拡張機能 作ってみたよ",
+    "permissions": ["contextMenus", "scripting", "tabs","storage"],
+    "host_permissions": ["https://xn--n8je9hcf0t4a.xn--q9jyb4c/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://xn--n8je9hcf0t4a.xn--q9jyb4c/tanka*"],
+        "js": ["inject.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Tanka Poster 設定"
+    }
+  }
+  
